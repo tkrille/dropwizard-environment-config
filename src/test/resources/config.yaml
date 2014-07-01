@@ -1,0 +1,17 @@
+array:
+  - 1
+  - $env:ARRAY_1
+  - $env:ARRAY_2:default
+object:
+  a: 1
+  b: $env:OBJECT_B
+  c: $env:OBJECT_C:default
+subTestConfiguration:
+  array:
+    - 1
+    - $env:SUB_ARRAY_1
+    - $env:SUB_ARRAY_2:default
+  object:
+    a: 1
+    b: $env:SUB_OBJECT_B
+    c: $env:SUB_OBJECT_C:default
