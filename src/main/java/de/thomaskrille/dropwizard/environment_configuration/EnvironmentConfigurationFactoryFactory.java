@@ -12,6 +12,7 @@ public class EnvironmentConfigurationFactoryFactory<T> implements ConfigurationF
     @Override
     public ConfigurationFactory create(final Class klass, final Validator validator, final ObjectMapper objectMapper,
             final String propertyPrefix) {
-        return new EnvironmentConfigurationFactory<T>(klass, validator, objectMapper, propertyPrefix, new DefaultEnvironmentProvider());
+        return new EnvironmentConfigurationFactory<T>(klass, validator, objectMapper, propertyPrefix,
+                new DefaultEnvironmentProvider());
     }
 }
