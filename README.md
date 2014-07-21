@@ -12,11 +12,9 @@ First add the dependency to your pom:
 <dependency>
     <groupId>de.thomaskrille.dropwizard</groupId>
     <artifactId>dropwizard-environment-configuration</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 </dependency>
 ```
-
-**NOTE:** Dropwizard Environment Config is not yet available on the Maven Central, but will be soon!
 
 To setup, simply set the <code>EnvironmentConfigurationFactoryFactory</code> as factory for configuration factories on
 the <code>Bootstrap</code> object:
