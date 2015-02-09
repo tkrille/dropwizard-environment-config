@@ -1,3 +1,14 @@
+/*
+ * Copyright Notice
+ *
+ * This class is an extended copy of io.dropwizard.configuration.ConfigurationFactory,
+ * Copyright 2010-2015 Coda Hale and Yammer, Inc.,
+ * licensed under the Apache License, Version 2.0, January 2004.
+ *
+ * Functionality to replace special tokens with environment variables has been added.
+ *
+ * You can find the original source here: https://github.com/dropwizard/dropwizard
+ */
 package de.thomaskrille.dropwizard.environment_configuration;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -30,6 +41,21 @@ import io.dropwizard.configuration.*;
 
 public class EnvironmentConfigurationFactory<T> extends ConfigurationFactory<T> {
 
+    /*
+     * Copyright 2014-2015 Thomas Krille
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *     http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
     public static final Pattern ENV_PATTERN = Pattern.compile("\\$env:([0-9A-Za-z_]+)(:(.+))?");
 
     private final Class<T> klass;
@@ -170,6 +196,20 @@ public class EnvironmentConfigurationFactory<T> extends ConfigurationFactory<T> 
         }
     }
 
+    /*
+     * EnvironmentConfigurationFactory#replaceEnvironmentVariables
+     *
+     * Copyright 2014-2015 Thomas Krille
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+     * with the License. You may obtain a copy of the License at
+     *
+     * http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+     * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+     * the specific language governing permissions and limitations under the License.
+     */
     private void replaceEnvironmentVariables(final JsonNode root) {
         Queue<JsonNode> q = Queues.newArrayDeque();
 
@@ -189,6 +229,20 @@ public class EnvironmentConfigurationFactory<T> extends ConfigurationFactory<T> 
         }
     }
 
+    /*
+     * EnvironmentConfigurationFactory#replaceEnvironmentVariablesForArray
+     *
+     * Copyright 2014-2015 Thomas Krille
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+     * with the License. You may obtain a copy of the License at
+     *
+     * http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+     * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+     * the specific language governing permissions and limitations under the License.
+     */
     private void replaceEnvironmentVariablesForArray(final Queue<JsonNode> q, final ArrayNode node) {
         for (int i = 0; i < node.size(); i++) {
             JsonNode element = node.get(i);
@@ -213,6 +267,20 @@ public class EnvironmentConfigurationFactory<T> extends ConfigurationFactory<T> 
         }
     }
 
+    /*
+     * EnvironmentConfigurationFactory#replaceEnvironmentVariablesForObject
+     *
+     * Copyright 2014-2015 Thomas Krille
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+     * with the License. You may obtain a copy of the License at
+     *
+     * http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+     * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+     * the specific language governing permissions and limitations under the License.
+     */
     private void replaceEnvironmentVariablesForObject(final Queue<JsonNode> q, final ObjectNode node) {
         Iterator<Map.Entry<String, JsonNode>> nodeIterator = node.fields();
         while (nodeIterator.hasNext()) {
@@ -237,6 +305,20 @@ public class EnvironmentConfigurationFactory<T> extends ConfigurationFactory<T> 
         }
     }
 
+    /*
+     * EnvironmentConfigurationFactory#getReplacementForValue
+     *
+     * Copyright 2014-2015 Thomas Krille
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+     * with the License. You may obtain a copy of the License at
+     *
+     * http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+     * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+     * the specific language governing permissions and limitations under the License.
+     */
     private String getReplacementForValue(final JsonNode node) {
         Matcher m = ENV_PATTERN.matcher(node.asText());
         if (!m.matches()) {

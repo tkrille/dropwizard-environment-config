@@ -59,3 +59,13 @@ Replacements are not supported when using the short notation, i.e. the following
  array: [ 1, $env:ARRAY_1, $env:ARRAY_2:default]
  object: {a: 1, b: $env:OBJECT_B, c: $env:OBJECT_C:default}
 ```
+
+Copyright Notice
+----------------
+
+This project is licensed under the Apache License, Version 2.0, January 2004, and uses software from the following 3rd parties:
+
+- Coda Hale
+- Yammer, Inc.
+
+See LICENSE-3RD-PARTY and NOTICE-3RD-PARTY for the individual 3rd parties.

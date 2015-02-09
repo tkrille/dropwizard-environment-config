@@ -1,3 +1,13 @@
+/*
+ * Copyright Notice
+ *
+ * This class is a reduced copy of io.dropwizard.configuration.ConfigurationParsingException,
+ * Copyright 2010-2015 Coda Hale and Yammer, Inc., licensed under the Apache License, Version 2.0, January 2004.
+ *
+ * The property name suggestion has been removed.
+ *
+ * You can find the original source here: https://github.com/dropwizard/dropwizard
+ */
 package de.thomaskrille.dropwizard.environment_configuration;
 
 import java.io.IOException;
