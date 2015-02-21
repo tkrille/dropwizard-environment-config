@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1 - 2015-02-2?
+## 1.1 - 2015-02-21
 
 ### Fixes
 
@@ -17,8 +17,8 @@
 
 - move TestEnvironmentProvider to test sources (7df6783)
 
-    this should not be a big deal, since nobody has ever used this
-    class in their projects, hopefully.
+    this should not be a big deal, since nobody has ever used this class in
+    their projects, hopefully.
 
 ## 1.0 - 2014-07-21
 

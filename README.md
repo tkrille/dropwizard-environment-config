@@ -1,7 +1,8 @@
 Dropwizard Environment Config
 =============================
 
-Dropwizard ConfigurationFactory that allows specifying environment variables as values in YAML.
+Dropwizard ConfigurationFactory that allows specifying environment variables as
+values in YAML.
 
 Setup
 -----
@@ -12,12 +13,12 @@ First add the dependency to your pom:
 <dependency>
     <groupId>de.thomaskrille.dropwizard</groupId>
     <artifactId>dropwizard-environment-configuration</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 
-To setup, simply set the <code>EnvironmentConfigurationFactoryFactory</code> as factory for configuration factories on
-the <code>Bootstrap</code> object:
+To setup, simply set the `EnvironmentConfigurationFactoryFactory` as factory
+for configuration factories on the `Bootstrap` object:
 
 ```java
 @Override
@@ -28,13 +29,15 @@ public void initialize(final Bootstrap<Config> bootstrap) {
 }
 ```
 
-Using <code>EnvironmentConfigurationFactory</code> also honors configuration overrides via system properties as usual.
-Configuration overrides take precedence over values set via environment variables.
+Using `EnvironmentConfigurationFactory` also honors configuration overrides
+via system properties as usual. Configuration overrides take precedence over
+values set via environment variables.
 
 Usage
 -----
 
-Environment variables can be specified in config.yaml by using the following "magic value":
+Environment variables can be specified in config.yaml by using the following
+"magic value":
 
 ```
 $env:ENVIRONMENT_VARIABLE[:DEFAULT_VALUE]
@@ -53,7 +56,8 @@ object:
   c: $env:OBJECT_C:default
 ```
 
-Replacements are not supported when using the short notation, i.e. the following will not work:
+Replacements are not supported when using the short notation, i.e. the
+following will not work:
 
 ```yaml
  array: [ 1, $env:ARRAY_1, $env:ARRAY_2:default]
@@ -63,7 +67,8 @@ Replacements are not supported when using the short notation, i.e. the following
 Copyright Notice
 ----------------
 
-This project is licensed under the Apache License, Version 2.0, January 2004, and uses software from the following 3rd parties:
+This project is licensed under the Apache License, Version 2.0, January 2004,
+and uses software from the following 3rd parties:
 
 - Coda Hale
 - Yammer, Inc.
