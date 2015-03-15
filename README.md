@@ -56,6 +56,16 @@ object:
   c: $env:OBJECT_C:default
 ```
 
+You can only replace the complete leaf value of the YAML tree. Inline
+replacements will not work:
+
+```yaml
+# this will not work and leave the tokens as is
+url: http://$env:HOST:$env:PORT/
+```
+
+See also #5.
+
 You have to write valid YAML, i.e. the following will not work:
 
 ```yaml
