@@ -1,6 +1,10 @@
 Dropwizard Environment Config
 =============================
 
+**NOTICE:** This project will become end of life soon. Please checkout the
+successor to this project: https://github.com/tkrille/dropwizard-template-config.
+All users are encouraged to migrate to the new project.
+
 Dropwizard ConfigurationFactory that allows specifying environment variables as
 values in YAML.
 
