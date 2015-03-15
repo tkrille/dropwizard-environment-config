@@ -68,7 +68,7 @@ replacements will not work:
 url: http://$env:HOST:$env:PORT/
 ```
 
-See also #5.
+See also https://github.com/tkrille/dropwizard-environment-config/pull/5.
 
 You have to write valid YAML, i.e. the following will not work:
 
