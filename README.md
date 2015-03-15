@@ -56,12 +56,18 @@ object:
   c: $env:OBJECT_C:default
 ```
 
-Replacements are not supported when using the short notation, i.e. the
-following will not work:
+You have to write valid YAML, i.e. the following will not work:
 
 ```yaml
- array: [ 1, $env:ARRAY_1, $env:ARRAY_2:default]
- object: {a: 1, b: $env:OBJECT_B, c: $env:OBJECT_C:default}
+ array: [ 1, $env:array_1, $env:array_2:default]
+ object: {a: 1, b: $env:object_b, c: $env:object_c:default}
+```
+
+Use quotes to make it valid:
+
+```yaml
+ array: [ 1, "$env:array_1", '$env:array_2:default']
+ object: {a: 1, b: "$env:object_b", c: '$env:object_c:default'}
 ```
 
 Copyright Notice
